@@ -16,7 +16,11 @@ use namespace::autoclean;
 
 sub before_build {
     my $self = shift;
-    $self->log(["ENV: %s", \%ENV]);
+
+    # $self->log(["ENV: %s", \%ENV]);
+
+    # nicer output
+    use Data::Dump; dd \%ENV;
 }
 
 __PACKAGE__->meta->make_immutable;
